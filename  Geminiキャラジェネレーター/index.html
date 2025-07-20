@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiキャラクタープロンプトジェネレーター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="notification-container"></div>
+    <h1>Geminiキャラクタープロンプトジェネレーター</h1>
+    <div class="container">
+        <h2>キャラクターID</h2>
+        <label for="char-name">名前</label>
+        <input type="text" id="char-name" class="savable-input" placeholder="例: 孤高のサイバーサムライ、アキラ">
+        <label for="char-desc">短い説明</label>
+        <textarea id="char-desc" class="savable-input" placeholder="例: ネオン街の影で生きる、謎に包まれた情報屋"></textarea>
+
+        <h2>必須特徴</h2>
+        <label for="face">顔</label>
+        <input type="text" id="face" class="savable-input" placeholder="例: シャープな輪郭、少し日に焼けた肌">
+        <label for="eyes">目</label>
+        <input type="text" id="eyes" class="savable-input" placeholder="例: 鋭い眼光の深い青色の瞳、片目にデジタルの傷跡">
+        <label for="hair">髪</label>
+        <input type="text" id="hair" class="savable-input" placeholder="例: 無造作なシルバーのショートヘア、一部が黒いメッシュ">
+        <label for="body">体</label>
+        <input type="text" id="body" class="savable-input" placeholder="例: しなやかで引き締まった筋肉質の体型">
+        <label for="clothing">服装</label>
+        <input type="text" id="clothing" class="savable-input" placeholder="例: 高機能素材の黒いロングコート、インナーはシンプルなグレーのシャツ">
+        <label for="accessories">アクセサリー</label>
+        <input type="text" id="accessories" class="savable-input" placeholder="例: 指先に埋め込まれたデータチップ、首元のチョーカー">
+
+        <h2>シーン要素</h2>
+        <label for="scene">場面の説明</label>
+        <textarea id="scene" class="savable-input" placeholder="例: 雨に濡れたサイバーパンク都市の路地裏、遠くにホログラム広告が見える"></textarea>
+
+        <h2>スタイル指定</h2>
+        <label for="style">スタイル</label>
+        <input type="text" id="style" class="savable-input" placeholder="例: 写実的な3Dレンダリング、シネマティックなライティング、アニメ調">
+
+        <div class="action-buttons">
+            <button id="generate-btn">プロンプトを生成</button>
+            <button id="clear-btn" class="secondary">全フィールドをクリア</button>
+        </div>
+
+        <hr>
+
+        <h2>テンプレート管理</h2>
+        <input type="text" id="template-name" placeholder="テンプレート名">
+        <div class="template-buttons">
+            <button id="save-btn">テンプレートを保存</button>
+            <select id="template-list"></select>
+            <button id="load-btn">テンプレートを読み込む</button>
+            <button id="delete-btn">テンプレートを削除</button>
+        </div>
+
+        <h2>生成されたプロンプト</h2>
+        <textarea id="result" readonly></textarea>
+        <button id="copy-btn">プロンプトをコピー</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
